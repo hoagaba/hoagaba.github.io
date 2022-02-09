@@ -1,16 +1,15 @@
-<?php if (!defined('__TYPECHO_ROOT_DIR__')) exit; ?>
-
-<!DOCTYPE HTML>
-<html class="hola-html-reset hola-var">
-    <head>
-        <?php $this->need('./components/global/header.php');?>
-    </head>
-    <body class="hola-body-typography hola-grey-bg">
-        <?php $this->need('./components/pages/post/navbar.php');?>
-        <div class="hola-container hola-layout-container hola-layout-container-sidebar-right">
-            <?php $this->need('./components/pages/post/article-view.php');?>
-            <?php $this->need('./components/pages/global/sidebar.php');?>
-        </div>
-        <?php $this->need('./components/global/footer.php');?>
-    </body>
-</html>
+<?php get_header(); ?>
+<article class="mod-post mod-post__type-page">
+	<header>
+		<h1 class="mod-post__title"><?php the_title(); ?></h1>
+	</header>
+	<?php while( have_posts() ): the_post(); $p_id = get_the_ID(); ?>
+		<div class="mod-post__entry">
+			<?php the_content(); ?>
+		</div>
+	<?php endwhile; ?>
+</article>
+<section class="mod-comment">
+	<?php comments_template(); ?>
+</section>
+<?php get_footer(); ?>

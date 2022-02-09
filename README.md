@@ -13,6 +13,5 @@
 - 无评论
 
 ## 使用
+https://github.com/wenxuanjun/Holakit`
 
-- 下载ZIP包，确保目录名为`Holakit`，放入Typecho的主题目录，在后台启用即可
-- 如果您不需要使用独立页面，可以删除`page.php`
